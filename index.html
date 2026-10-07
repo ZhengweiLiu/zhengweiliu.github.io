@@ -28,6 +28,7 @@
     .nav a[aria-current="page"]::after { content:""; position:absolute; bottom:-23px; height:3px; background:var(--blue); left:0; right:0; }
     .layout { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:236px minmax(0,1fr); gap:68px; padding:58px 34px 70px; min-height:calc(100vh - 164px); }
     .profile { align-self:start; position:sticky; top:36px; }
+    .profile-avatar { display:block; width:210px; height:210px; object-fit:cover; border-radius:50%; padding:5px; border:1px solid var(--line); background:#fff; margin:0 0 22px; }
     .name { font:600 29px/1.24 Georgia,"Times New Roman",serif; letter-spacing:-.7px; margin:0 0 5px; }
     .chinese-name { color:var(--muted); font:18px/1.5 "Noto Sans CJK SC","Microsoft YaHei",sans-serif; letter-spacing:3px; margin:0 0 22px; }
     .position { margin:0 0 6px; font-weight:600; font-size:16px; }
@@ -73,7 +74,7 @@
     .site-footer { border-top:1px solid var(--line); background:var(--soft); }
     .footer-inner { max-width:var(--max); margin:auto; padding:19px 34px; font-size:13px; color:var(--muted); display:flex; justify-content:space-between; gap:16px; }
     @media (min-width:1500px) { :root { --max:1220px; } .layout { gap:78px; } }
-    @media (max-width:900px) { .layout { grid-template-columns:200px minmax(0,1fr); gap:38px; padding:42px 26px 60px; } .masthead-inner { padding-left:26px; padding-right:26px; } .name { font-size:26px; } .cv-entry-heading { display:block; } }
+    @media (max-width:900px) { .layout { grid-template-columns:200px minmax(0,1fr); gap:38px; padding:42px 26px 60px; } .masthead-inner { padding-left:26px; padding-right:26px; } .profile-avatar { width:180px; height:180px; } .name { font-size:26px; } .cv-entry-heading { display:block; } }
     @media (max-width:680px) {
       body { font-size:16px; }
       .masthead-inner { padding:17px 22px 14px; display:block; }
@@ -83,6 +84,7 @@
       .nav a[aria-current="page"]::after { bottom:-15px; height:2px; }
       .layout { display:block; padding:28px 22px 45px; min-height:calc(100vh - 175px); }
       .profile { position:static; padding-bottom:24px; margin-bottom:29px; border-bottom:1px solid var(--line); }
+      .profile-avatar { width:144px; height:144px; margin-bottom:18px; }
       .name { display:inline; font-size:27px; }
       .chinese-name { display:inline-block; margin:0 0 10px 12px; font-size:16px; letter-spacing:2px; }
       .position { margin:0 0 2px; font-size:15px; }
@@ -99,7 +101,7 @@
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @media print {
       body { color:#000; font-size:11pt; }
-      .masthead,.site-footer,.skip { display:none; }
+      .masthead,.site-footer,.skip,.profile-avatar { display:none; }
       .layout { display:block; padding:0; min-height:0; }
       .profile { position:static; border-bottom:1px solid #bbb; padding-bottom:12px; margin-bottom:20px; }
       .name { font-size:22pt; display:inline; }
@@ -128,6 +130,7 @@
 
   <div class="layout">
     <aside class="profile" aria-label="Profile">
+      <img class="profile-avatar" src="avatar.png" alt="Illustrated portrait of Zhengwei Liu" width="210" height="210">
       <p class="name">Zhengwei Liu</p>
       <p class="chinese-name" lang="zh-Hans">刘正威</p>
       <p class="position">Lecturer in Statistics</p>
